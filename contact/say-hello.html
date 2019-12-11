@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="../sass/libs/bootstrap.min.css" />
+  <link rel="stylesheet" href="../node_modules/@fortawesome/fontawesome-free/css/all.min.css" />
+  <link rel="stylesheet" href="../sass/main.css" />
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-firestore.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-analytics.js"></script>
+  <title>Yazan Alhaffar|Say Hello</title>
+  <style>
+      .form-content #say-hello-form .input-form .has-data label {
+        left: 17px !important;
+        top: 20px !important;
+        -webkit-transform: scale(0.8);
+        transform: scale(0.8);
+        color: #FFF;
+      }
+    </style>
+</head>
+
+<body id="say-hello">
+  <!-- Start Navbar -->
+  <nav id="zyetax-navbar">
+    <div class="container">
+      <div class="row">
+        <div class="logo col-md-4">
+          <a href="../index.html"><img src="../images/logo2.png" style="width: 100px;" alt="" /></a>
+        </div>
+        <div class="navbar-list col-md-8">
+          <div class="rest-close text-right">
+            <div class="reset" id="reset">
+              <i class="fas fa-undo-alt fa-2x"></i>
+              <span>Reset</span>
+            </div>
+            <div class="close-x">
+              <a href="../index.html"><i class="fas fa-times fa-2x"></i></a>
+              <span>Close</span>
+            </div>
+          </div>
+        </div>
+      </div>
+  </nav>
+  <!-- End Navbar -->
+  <!-- Start Side Bar -->
+  <div class="side-bar text-center">
+    <div class="container">
+      <div class="img-avatar">
+        <img src="../images/bref-me.svg" alt="">
+      </div>
+    </div>
+  </div>
+  <!-- End Side Bar -->
+  <!-- Start Form Content -->
+  <div class="form-content text-center">
+    <div class="container">
+      <h1>Thanks for taking the time to reach out. <br> How can I help you today?</h1>
+      <form id="say-hello-form">
+        <div class="input-form text-center">
+          <div class="row">
+            <div class="say-hello-name col text-right">
+              <input type="text" id="name" name="username" required>
+              <label for="username" class="name-label text-left">Name</label>
+            </div>
+            <div class="say-hello-email col text-left">
+              <input type="email" id="email" name="email" required>
+              <label class="email-label" for="email">Email</label>
+            </div>
+          </div>
+          <label for="message">Message</label>
+          <textarea name="description" id="message" cols="30" rows="10"></textarea>
+        </div>
+        <button>Submit</button>
+      </form>
+    </div>
+  </div>
+  <!-- End Form Content -->
+  <script src="../js/libs/jquery-3.4.1.min.js"></script>
+  <script src="../js/libs/bootstrap.min.js"></script>
+  <script src="../js/plugin.js"></script>
+  <script src="../node_modules/@fortawesome/fontawesome-free/js/all.min.js"></script>
+  <script>
+    $(function () {
+      $('.form-content #say-hello-form .input-form .say-hello-name > input').on('focusout', function () {
+        if ($(this).val() != '') {
+          $(this).parent().addClass('has-data');
+        } else {
+          $(this).parent().removeClass('has-data')
+        }
+      });
+      $('.form-content #say-hello-form .input-form .say-hello-email > input').on('focusout', function () {
+        if ($(this).val() != '') {
+          $(this).parent().addClass('has-data');
+        } else {
+          $(this).parent().removeClass('has-data')
+        }
+      });
+    });
+
+
+
+    const form = document.querySelector('#say-hello-form');
+    function renderSayHello(doc) {
+      name.textContent = doc.data().name;
+      email.textContent = doc.data().email
+    }
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      db.collection('userData').add({
+        name: form.name.value,
+        email: form.email.value,
+        description: form.description.value
+      });
+      form.name.value = '',
+        form.email.value = '',
+        form.description.value = ''
+    });
+
+
+
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyAeFdtW-4dfga_EKusT_7ZfjelK8thY1qo",
+      authDomain: "portfolio-bd182.firebaseapp.com",
+      databaseURL: "https://portfolio-bd182.firebaseio.com",
+      projectId: "portfolio-bd182",
+      storageBucket: "portfolio-bd182.appspot.com",
+      messagingSenderId: "654516243958",
+      appId: "1:654516243958:web:287d01e391871290860bd7",
+      measurementId: "G-7ZP7F3PBQG"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+    const db = firebase.firestore();
+
+
+    let reset = document.querySelector('#reset');
+    reset.onclick = function () {
+      form.reset()
+    }
+  </script>
+</body>
+
+</html>

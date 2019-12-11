@@ -1,0 +1,54 @@
+.startup-project
+{
+    padding: 150px 0;
+    background-color: $mainColor;
+    color: #FFF;
+    h3
+    {
+        font-weight: bold;
+        letter-spacing: 1px;
+        margin-bottom: 20px;
+    }
+    p
+    {
+        margin: 5px;
+        font-size: 20px;
+    }
+}
+.my-sup
+{
+    .box
+    {
+        border: 1px solid #CCC;
+        padding: 50px 0;
+        margin-top: -80px;
+        background: #FFF;
+        border-radius: 20px;
+        &:last-child
+        {
+            margin-left: 10px;
+            margin-top: 20px;
+        }
+        h2
+        {
+            img
+            {
+                background: #554fbd;
+                border-radius: 20px;
+                padding: 2px;
+            }
+            .mdn
+            {
+                max-width: 100%;
+                width: 70px;
+                background: transparent;
+            }
+        }
+        a
+        {
+            color: $mainColor;
+            text-decoration: none;
+            font-size: 20px;
+        }
+    }
+}

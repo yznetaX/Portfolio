@@ -1,0 +1,59 @@
+footer
+{
+    margin-top: 150px;
+    background: $mainColor;
+    .quotation
+    {
+        padding: 30px 0;
+        color: rgba($color: #FFF, $alpha: 0.7);
+        font-size: 25px;
+        font-weight: 500;
+    }
+    .social-item
+    {
+        a
+        {
+            margin: 10px;
+            color: rgba($color: #FFF, $alpha: 0.7);
+            display: inline-block;
+            width: 55px;
+            border: 2px solid;
+            height: 55px;
+            border-radius: 50%;
+            transition: all .4s linear;
+            &:hover
+            {
+                background: #FFF;
+                color: $mainColor;
+            }
+            span
+            {
+                text-align: center;
+                svg
+                {
+                    transform: translate(0px, 10px);
+                }
+            }
+        }
+    }
+    .made-by
+    {
+        padding: 50px 0 20px 0;
+        h5
+        {
+            color: rgba($color: #FFF, $alpha: 0.7);
+        }
+    }
+    .bootstrap
+    {
+        padding: 0 0 20px 0;
+        h6
+        {
+            a
+            {
+                color: rgba($color: #FFF, $alpha: 0.6);
+                text-decoration: none;
+            }
+        }
+    }
+}

@@ -1,0 +1,101 @@
+footer {
+  .start-project {
+    -webkit-transform: translateY(-85px);
+            transform: translateY(-85px);
+
+    .start-project-content {
+      background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #131c3a), to(#131c3a));
+      background: linear-gradient(to top, #131c3a 0, #131c3a 100%);
+      color: #fff;
+      padding: 60px 40px;
+      border-radius: 20px;
+      -webkit-box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.2), 0 0 0 1px #141c3a;
+              box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.2), 0 0 0 1px #141c3a;
+      .start-project-header
+      {
+        margin: auto;
+        @media (max-width: 575px) {
+          margin: auto;
+        }
+        @media (min-width: 768px) and (max-width: 991px) {
+          margin: auto;
+      }
+      @media (min-width: 567px) and (max-width: 767px){
+        width: 100%;
+        text-align: center;
+      }
+        h2
+        {
+          line-height: 80px;
+          @media (min-width: 768px) and (max-width: 991px) {
+            line-height: normal;
+        }
+        @media (max-width: 450px) {
+          line-height: normal;
+          text-align: center;
+        }
+        }
+      }
+      .interested-with
+      {
+        @media (min-width: 567px) and (max-width: 767px){
+          text-align: center;
+        }
+        @media (max-width: 575px) {
+          text-align: center;
+        }
+        p
+        {
+          margin: 20px 0;
+        }
+      }
+      .lets-do-it {
+        text-align: right;
+        margin: auto;
+        @media (min-width: 567px) and (max-width: 767px){
+          margin: auto;
+          -webkit-transform: translate(-24px, 0px);
+                  transform: translate(-24px, 0px);
+        }
+        @media (max-width: 575px){
+          margin: auto;
+          -webkit-transform: translate(-24px, 0px);
+                  transform: translate(-24px, 0px);
+        }
+        span {
+          display: inline-block;
+          border: 2px solid $mainColor;
+          width: 65%;
+          text-align: center;
+          border-radius: 29px;
+          margin: 20px 20px;
+          -webkit-transition: all .4s ease-in-out;
+          transition: all .4s ease-in-out;
+          cursor: pointer;
+          &:hover
+          {
+            background: $mainColor;
+          }
+          @media (min-width: 567px) and (max-width: 767px){
+            width: 41%;
+            margin: auto;
+            -webkit-transform: translate(16px, 10px);
+                    transform: translate(16px, 10px);
+            display: block;
+          }
+          @media (max-width: 575px) {
+            width: 100%;
+          }
+          a
+          {
+            color: #FFF;
+            text-decoration: none;
+            display: block;
+            padding: 15px 5px;
+          }
+        }
+      }
+    }
+  }
+}
+

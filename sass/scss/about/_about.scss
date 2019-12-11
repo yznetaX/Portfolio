@@ -1,0 +1,142 @@
+#zyetax-navbar
+{
+    .logo
+    {
+        @media(max-width: 575px)
+        {
+            text-align: center;
+        }
+        @media (min-width: 576px) and (max-width: 767px) {
+            text-align: center !important;
+          }
+    }
+    .navbar-list
+    {
+        .list-desc
+        {
+            @media (max-width: 575px) {
+                text-align: center !important;
+            }
+            padding: 50px;
+            .go-to-contact
+            {
+                a
+                {
+                    color: $mainColor;
+                    text-decoration: none;
+                    border: 2px solid $mainColor;
+                    padding: 15px;
+                    border-radius: 15px;
+                    margin: 10px 20px;
+                    font-size: 22px;
+                    font-weight: 400;
+                    cursor: pointer;
+                    -webkit-transition: all .4s linear;
+                    transition: all .4s linear;
+                    &:hover
+                    {
+                        background-color: $mainColor;
+                        color: #FFF;
+                        
+                    }
+                }
+                margin: 10px 20px;
+                font-size: 22px;
+                font-weight: 400;
+                cursor: pointer;
+                -webkit-transition: all .4s linear;
+                transition: all .4s linear;
+            }
+            .go-to-works
+            {
+                a
+                {
+                    color: #212529;
+                    text-decoration: none;
+                    font-weight: bold;
+                    font-size: 22px;
+                    -webkit-transition: all .4s linear;
+                    transition: all .4s linear;
+                    &:hover
+                    {
+                        color: $mainColor;
+                    }
+                }
+            }
+        }
+    }
+}
+
+#impress
+{
+    .about-me-one{
+        display: block;
+        width: 1920px;
+        padding: 30px 50px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 40px;
+        text-align: center;
+        .about-description
+        {
+            border: 2px solid $mainColor;
+            display: inline-block;
+            padding: 35px;
+            border-radius: 15px;
+            letter-spacing: 2px;
+            -webkit-transition: all .5s ease-in-out;
+            transition: all .5s ease-in-out;
+            &:hover
+            {
+                background: $mainColor;
+                color: #FFF;
+            }
+        }
+        .about-my-skills
+        {
+            h3
+            {
+                font-size: 48px;
+            }
+            .lang-speak
+            {
+                ul
+                {
+                    li
+                    {
+                        display: inline-block;
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+        .adv-lang
+        {
+            ul
+            {
+                li
+                {
+                    display: inline-block;
+                    font-weight: bolder;
+                }
+            }
+        }
+        .to-sec-animate
+        {
+            span
+            {
+                font-weight: bolder;
+                a
+                {
+                    color: #212529;
+                    text-decoration: none;
+                    -webkit-transition: all .3s ease-in;
+                    transition: all .3s ease-in;
+                    &:hover
+                    {
+                        color: $mainColor;
+                    }
+                }
+            }
+        }
+    }
+}

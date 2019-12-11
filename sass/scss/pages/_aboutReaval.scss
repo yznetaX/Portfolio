@@ -1,0 +1,139 @@
+.about-nav
+{
+    position: absolute;
+    z-index: 9999;
+    ul
+    {
+        list-style: none;
+        li
+        {
+            display: inline-block;
+            margin: 10px;
+            font-size: 25px;
+            font-weight: bold;
+            cursor: pointer;
+            a
+            {
+                text-decoration: none;
+                color: #212529;
+                transition: all .4s ease-in-out;
+                &:hover
+                {
+                    color: $mainColor;
+                }
+            }
+        }
+    }
+}
+
+.sec-way
+{
+    .sec-way-animate
+    {
+        .step-one
+        {
+            .about-me-one
+            {
+                .about-description
+                {
+                    border: 2px solid $mainColor;
+                    padding: 35px;
+                    border-radius: 15px;
+                    letter-spacing: 2px;
+                    transition: all .5s ease-in-out;
+                    &:hover
+                    {
+                        background: $mainColor;
+                        color: #FFF;
+                    }
+                }
+            }
+        }
+        .step-two
+        {
+            .about-my-skills
+            {
+                .lang-speak
+                {
+                    ul
+                    {
+                        list-style: none;
+                        li
+                        {
+                            display: inline-block;
+                            font-weight: bold;
+                        }
+                    }
+                }
+            }
+        }
+        .step-three
+        {
+            .adv-lang
+            {
+                ul
+                {
+                    list-style: none;
+                    li
+                    {
+                        display: inline-block;
+                        font-weight: bolder;
+                    }
+                }
+            }
+        }
+        .step-four
+        {
+            .framwork-lang
+            {
+                ul
+                {
+                    list-style: none;
+                }
+            }
+        }
+        .step-five
+        {
+            .to-first-animate
+            {
+                span
+                {
+                    a
+                    {
+                        color: #212529;
+                        text-decoration: none;
+                        transition: all .4s ease-in-out;
+                        &:hover
+                        {
+                            color: $mainColor;
+                        }
+                    }
+                }
+            }
+        }
+        .last-step
+        {
+            .go-to-work
+            {
+                h4
+                {
+                    text-transform: capitalize;
+                    font-weight: normal;
+                }
+                span
+                {
+                    a
+                    {
+                        color: #212529;
+                        text-decoration: none;
+                        transition: all .4s ease-in-out;
+                        &:hover
+                        {
+                            color: $mainColor;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

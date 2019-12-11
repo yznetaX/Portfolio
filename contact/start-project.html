@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="../sass/libs/bootstrap.min.css" />
+  <link rel="stylesheet" href="../node_modules/@fortawesome/fontawesome-free/css/all.min.css" />
+  <link rel="stylesheet" href="../sass/main.css" />
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-firestore.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-analytics.js"></script>
+  <title>Yazan Alhaffar|Project Planner</title>
+  <style>
+    .project-content #start-project-form .input-project-form .has-data label {
+      left: 17px !important;
+      top: 20px !important;
+      -webkit-transform: scale(0.8);
+      transform: scale(0.8);
+      color: #FFF;
+    }
+  </style>
+</head>
+
+<body id="say-hello">
+  <!-- Start Navbar -->
+  <nav id="zyetax-navbar">
+    <div class="container">
+      <div class="row">
+        <div class="logo col-md-4">
+          <a href="../index.html"><img src="../images/logo2.png" style="width: 100px;" alt="" /></a>
+        </div>
+        <div class="navbar-list col-md-8">
+          <div class="rest-close text-right">
+            <div class="reset" id="reset-project">
+              <i class="fas fa-undo-alt fa-2x"></i>
+              <span>Reset</span>
+            </div>
+            <div class="close-x">
+              <a href="../index.html"><i class="fas fa-times fa-2x"></i></a>
+              <span>Close</span>
+            </div>
+          </div>
+        </div>
+      </div>
+  </nav>
+  <!-- End Navbar -->
+  <!-- Start Side Bar -->
+  <div class="side-bar text-center">
+    <div class="container">
+      <div class="img-avatar">
+        <img src="../images/bref-me.svg" alt="">
+      </div>
+    </div>
+  </div>
+  <!-- End Side Bar -->
+  <!-- Start Project Content -->
+  <div class="project-content text-center">
+    <div class="container">
+      <h1>I’m excited to learn about your project. <br>Ready to get started?</h1>
+      <form id="start-project-form">
+        <div class="input-project-form">
+          <div class="row">
+            <div class="start-project-name col text-right">
+              <input type="text" id="name" name="username" required autocomplete="off">
+              <label for="username" class="name-label text-left">Name</label>
+            </div>
+            <div class="start-project-email col text-left">
+              <input type="email" id="email" name="email" required autocomplete="off">
+              <label class="email-label" for="email">Email</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="type-of-project col">
+              <label for="type-of" class="type-of">Type Of Project</label>
+              <select name="chossen" id="type-of" opean>
+                <option value="0" disabled selected hidden></option>
+                <option>Responsive Design</option>
+                <option>Web app</option>
+                <option disabled><span>Mobile App Soon</span></option>
+              </select>
+            </div>
+            <div class="budget-input col">
+              <label class="budget" for="budget">Budget</label>
+              <input type="range" id="budget" name="budget" min="10" max="10000" required value="10"
+                onmousemove="rangeSlider(this.value)" onChange="rangeSlider(this.value)">
+              <span id="rangeValue">10$</span>
+            </div>
+          </div>
+          <label for="message">Additional Details</label>
+          <textarea name="details" id="message" cols="30" rows="7"></textarea>
+        </div>
+        <button>Submit</button>
+      </form>
+    </div>
+  </div>
+  <!-- End Project Content -->
+  <script src="../js/libs/jquery-3.4.1.min.js"></script>
+  <script src="../js/libs/bootstrap.min.js"></script>
+  <script src="../js/plugin.js"></script>
+  <script src="../node_modules/@fortawesome/fontawesome-free/js/all.min.js"></script>
+  <script>
+    $(function () {
+      $('.project-content #start-project-form .input-project-form .start-project-name > input').on('focusout', function () {
+        if ($(this).val() != '') {
+          $(this).parent().addClass('has-data');
+        } else {
+          $(this).parent().removeClass('has-data')
+        }
+      });
+      $('.project-content #start-project-form .input-project-form .start-project-email > input').on('focusout', function () {
+        if ($(this).val() != '') {
+          $(this).parent().addClass('has-data');
+        } else {
+          $(this).parent().removeClass('has-data')
+        }
+      });
+    });
+    
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyAeFdtW-4dfga_EKusT_7ZfjelK8thY1qo",
+      authDomain: "portfolio-bd182.firebaseapp.com",
+      databaseURL: "https://portfolio-bd182.firebaseio.com",
+      projectId: "portfolio-bd182",
+      storageBucket: "portfolio-bd182.appspot.com",
+      messagingSenderId: "654516243958",
+      appId: "1:654516243958:web:287d01e391871290860bd7",
+      measurementId: "G-7ZP7F3PBQG"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+    const db = firebase.firestore();
+    function rangeSlider(value) {
+      document.getElementById('rangeValue').innerHTML = value + '$';
+    }
+    const form = document.querySelector('#start-project-form');
+    function renderProject(doc) {
+      name.textContent = doc.data().name;
+      email.textContent = doc.data().email;
+      details.textContent = doc.data().details;
+      budget.textContent = doc.data().budget;
+      chossen.textContent = doc.data().chossen
+    }
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      db.collection('porjectDetails').add({
+        name: form.name.value,
+        email: form.email.value,
+        details: form.details.value,
+        budget: form.budget.value,
+        chossen: form.chossen.value
+
+      });
+      form.name.value = '',
+        form.email.value = '',
+        form.details.value = '',
+        form.budget.value = null,
+        form.chossen.value = ''
+    });
+
+    let reset = document.querySelector('#reset-project');
+    reset.onclick = function () {
+      form.reset();
+    }
+  </script>
+</body>
+
+</html>

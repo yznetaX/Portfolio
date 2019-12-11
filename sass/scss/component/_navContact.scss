@@ -1,0 +1,54 @@
+#zyetax-navbar {
+  padding: 20px 0 0 0;
+  .navbar-list {
+    .rest-close {
+      line-height: 100px;
+      @media (max-width: 575px) {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+      }
+      @media (min-width: 576px) and (max-width: 767px) {
+        text-align: center !important;
+      }
+      .reset,
+      .close-x {
+        display: inline-block;
+        color: $mainColor;
+        cursor: pointer;
+        @media (max-width: 575px) {
+          margin: auto;
+        }
+      }
+      .close-x
+      {
+        a
+        {
+          color: $mainColor;
+          text-decoration: none;
+        }
+      }
+      .reset {
+        margin-right: 20px;
+      }
+    }
+  }
+}
+.side-bar {
+  .img-avatar {
+    &::before {
+      content: "";
+      width: 100%;
+      height: 2px;
+      display: block;
+      background: #d2d2d280;
+      z-index: -1;
+      position: absolute;
+      top: 29%;
+      left: 0;
+    }
+    img {
+      width: 100px;
+    }
+  }
+}

@@ -1,0 +1,104 @@
+.form-content {
+  padding: 0 0 50px 0;
+  h1 {
+    padding: 25px 0;
+    font-weight: lighter;
+    @media (max-width: 575px) {
+      font-size: 25px;
+      font-weight: lighter;
+    }
+  }
+  button
+  {
+    border-radius: 20px;
+    width: 150px;
+    margin: 20px 0;
+    padding: 8px 20px;
+    background-color: transparent;
+    border: 2px solid $mainColor;
+    color: $mainColor;
+    font-size: 20px;
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    &:hover
+    {
+      background: $mainColor;
+      color: #FFF;
+    }
+  }
+  #say-hello-form {
+    .input-form {
+      .row
+      {
+        @media (max-width: 575px) {
+          display: block;
+        }
+      }
+      width: 800px;
+      margin: auto;
+      @media (max-width: 575px) {
+        width: 100%;
+      }
+      @media (min-width: 576px) and (max-width: 767px) {
+        width: 100%
+      }
+      .say-hello-name,
+      .say-hello-email
+       {
+        position: relative;
+        padding: 40px 0;
+        input {
+          background-color: transparent;
+          width: 94%;
+          margin: 10px;
+          padding: 10px;
+          border-radius: 15px;
+          border: none;
+          border-bottom: 1px solid #ccc;
+          outline: none;
+          color: $mainColor;
+          font-size: 24px;
+          -webkit-transition: all .3s ease-in-out;
+          transition: all .3s ease-in-out;
+          &:focus
+          {
+            border-bottom-color: $mainColor;
+          }
+          &:focus + label
+          {
+            left: 17px;
+            top: 20px;
+            -webkit-transform: scale(0.8);
+                    transform: scale(0.8);
+            color: $mainColor;
+          }
+        }
+        .name-label,
+        .email-label
+        {
+          -webkit-transition: all .5s ease-in-out;
+          transition: all .5s ease-in-out;
+          position: absolute;
+          left: 30px;
+          top: 58px;
+          z-index: -1;
+          color: #6f6f6f;
+          font-size: 20px;
+        }
+      }
+      textarea
+      {
+        width: 100%;
+        border: 1px solid #CCC;
+        border-radius: 10px;
+        outline: none;
+        font-size: 20px;
+        color: $mainColor;
+      }
+      label
+      {
+        font-size: 20px;
+      }
+    }
+  }
+}

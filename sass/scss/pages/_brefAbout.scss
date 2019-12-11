@@ -1,0 +1,31 @@
+.bref-about-me
+{
+    padding: 50px 0;
+    .bref-content
+    {
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold';
+        h1
+        {
+            font-size: 50px !important;
+            margin: 0 0 30px 0;
+            font-weight: bolder;
+            @media (min-width: 768px) and (max-width: 991px) {
+                font-size: 32px !important;
+            }
+            @media (max-width: 575px) {
+                font-size: 32px !important;
+            }
+        }
+        h4
+        {
+            font-weight: lighter;
+            @media (min-width: 768px) and (max-width: 991px) {
+                font-size: 20px !important;
+            }
+        }
+    }
+    .img-bref
+    {
+        padding: 50px 0 0 0;
+    }
+}   

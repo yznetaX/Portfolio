@@ -1,0 +1,60 @@
+.my-recent-work
+{
+    padding: 0 0 50px 0;
+    .img-work 
+    {
+        img
+        {
+            width: 600px;
+            @media (max-width: 575px) {
+                max-width: 100%;
+            }
+        }
+    }
+    .work-desc
+    {
+        h1
+        {
+            font-size: 70px !important;
+            color: $mainColor;
+            @media (min-width: 576px) and (max-width: 767px) {
+                font-size: 60px !important;
+            }
+        }
+        H4
+        {
+            font-size: 24px;
+            color: #3f3d56;
+            @media (min-width: 576px) and (max-width: 767px) {
+                font-size: 20px !important;
+            }
+        }
+        span
+        {
+            a
+            {
+                color: #212529;
+                text-decoration: none;
+                font-size: 20px;
+                font-weight: 600;
+                color: #3f3d56;
+                -webkit-transition: all .5s ease-in-out;
+                transition: all .5s ease-in-out;
+                &:hover
+                {
+                    color: $mainColor;
+                }
+            }
+        }
+    }
+}
+
+.looking-for
+{
+    h2
+    {
+        @media (min-width: 576px) and (max-width: 767px) {
+            font-size: 26px !important;
+        }
+    }
+}

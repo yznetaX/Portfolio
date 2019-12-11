@@ -1,0 +1,63 @@
+$mainColor: #7510f7;
+html
+{
+    overflow-x: hidden;
+}
+body
+{
+    background-color: rgba(255, 255, 255, 0.918);
+}
+.has-data
+{          
+  &:focus  label
+  {
+    left: 17px;
+    top: 20px;
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+    color: #7510f7;
+  }
+}
+label
+{
+    font-family: monospace;
+}
+
+h1,h2
+{
+    font-weight: bold;
+    font-family: monospace;
+}
+h3,h4,h5,h6
+{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold';
+    // font-family: monospace;
+}
+
+
+p
+{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman';
+    font-size: 20px;
+}
+span > a
+{
+    font-family: Palatino;
+    font-size: 22px;
+}
+
+input,
+textarea
+{
+    font-family: Roboto;
+    letter-spacing: 1px;
+}
+textarea
+{
+    letter-spacing: 2px;
+}
+
+button
+{
+    outline: none;
+}

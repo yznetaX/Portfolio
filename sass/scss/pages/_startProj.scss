@@ -1,0 +1,175 @@
+.project-content {
+  padding: 30px 0 50px 0;
+  h1 {
+    padding: 25px 0;
+    font-weight: lighter;
+    @media (max-width: 575px) {
+      font-size: 25px;
+    }
+  }
+  button
+  {
+    border-radius: 20px;
+    width: 150px;
+    margin: 20px 0;
+    padding: 8px 20px;
+    background-color: transparent;
+    border: 2px solid $mainColor;
+    font-size: 20px;
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    color: $mainColor;
+    outline: none;
+    &:hover
+    {
+      background: $mainColor;
+      color: #FFF;
+    }
+  }
+  #start-project-form {
+    .input-project-form {
+      width: 800px;
+      margin: auto;
+      @media (max-width: 575px) {
+        width: 100%;
+      }
+      @media (min-width: 576px) and (max-width: 767px) {
+        width: 100%;
+      }
+      @media (max-width: 900px) {
+        width: 100%;
+      }
+      .start-project-name,
+      .start-project-email {
+        position: relative;
+        padding: 40px 0;
+        input {
+          background-color: transparent;
+          width: 94%;
+          margin: 10px;
+          padding: 10px;
+          border-radius: 15px;
+          border: none;
+          border-bottom: 1px solid #ccc;
+          color: $mainColor;
+          font-size: 24px;
+          outline: none;
+          -webkit-transition: all 0.3s ease-in-out;
+          transition: all 0.3s ease-in-out;
+          &:focus {
+            border-bottom-color: $mainColor;
+          }
+          &:focus + label {
+            left: 17px;
+            top: 20px;
+            -webkit-transform: scale(0.8);
+                    transform: scale(0.8);
+            color: $mainColor;
+          }
+        }
+        .name-label,
+        .email-label {
+          -webkit-transition: all 0.5s ease-in-out;
+          transition: all 0.5s ease-in-out;
+          position: absolute;
+          left: 30px;
+          top: 58px;
+          z-index: -1;
+          color: #6f6f6f;
+          font-size: 20px;
+        }
+      }
+      .type-of-project
+      {
+        .type-of
+        {
+          font-size: 22px;
+        }
+        select
+        {
+          background: transparent;
+          width: 100%;
+          padding: 10px;
+          border-radius: 15px;
+          border: none;
+          border-bottom: 1px solid #CCC;
+          border-top:1px solid #CCC ;
+          outline: none;
+          -webkit-transition: all .5s ease-in-out;
+          transition: all .5s ease-in-out;
+          &:focus
+          {
+            border-top:1px solid $mainColor;
+            border-bottom:1px solid $mainColor;
+          }
+          option
+          {
+            font-size: 25px;
+          }
+        }
+      }
+      .budget-input
+      {
+        .budget
+        {
+          font-size: 22px;
+        }
+        input
+        {
+          -webkit-appearance: none;
+          width: 100%;
+          background: transparent;
+          border: 1px solid #CCC;
+          outline: none;
+          opacity: 0.7;
+          border-radius: 15px;
+          -webkit-transition: all .4s ease-in-out;
+          transition: all .4s ease-in-out;
+          overflow: hidden;
+          height: 45px;
+          &:hover
+          {
+            opacity: 1;
+            background-color: $mainColor;
+            border: 1px solid $mainColor;
+          }
+          &::-webkit-slider-thumb
+          {
+            -webkit-appearance: none;
+            appearance: none;
+            -webkit-clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+                    clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+            width: 25px;
+            height: 25px;
+            background: rgb(24, 0, 51);
+            cursor: pointer;
+          }
+          &::-moz-slider-thumb
+          {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+                 appearance: none;
+            clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+            width: 25px;
+            height: 25px;
+            background: rgb(24, 0, 51);
+            cursor: pointer;
+          }
+        }
+      }
+      textarea
+      {
+        width: 100%;
+        border: 1px solid #CCC;
+        border-radius: 10px;
+        outline: none;
+        font-size: 23px;
+        color: $mainColor;
+      }
+      label
+      {
+        font-size: 20px;
+      }
+    }
+  }
+}
