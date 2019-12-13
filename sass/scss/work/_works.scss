@@ -2,8 +2,26 @@
   padding: 50px 0;
   .old-prot {
       padding: 40px 0;
+      .row
+      {
+        &.row-works
+        {
+          @media(min-width: 350px) and (max-width: 767px) 
+          {
+            display: block !important;
+          }
+        }
+      }
     .project-description {
         padding-top: 50px;
+        @media(min-width: 350px) and (max-width: 767px) 
+        {
+          text-align: center;
+        }
+        @media (max-width: 575px)
+        {
+          text-align: center;
+        }
       a {
           text-decoration: none;
         h2 {
@@ -63,7 +81,14 @@
             background-color: $mainColor;
             color: #FFF;
           }
-
+          @media (min-width: 768px) and (max-width: 991px) 
+          {
+            margin: 0;;
+          }
+          @media (max-width: 575px)
+          {
+            display: block;
+          }
         }
       }
     }
